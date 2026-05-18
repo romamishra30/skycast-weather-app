@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SkyCast</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About this app</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#guide">Usage Guide</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input id="cityInput" class="form-control me-2" type="search" placeholder="Enter city" />
+
+                    <button id="submit" class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    </div> <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check" viewBox="0 0 16 16">
+            <title>Check</title>
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z">
+            </path>
+        </symbol>
+    </svg>
+    <div class="container py-3">
+        <header>
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 id="cityName" class="display-4 fw-normal text-body-emphasis">
+                    🌤️Weather of City
+                </h1>
+            </div>
+        </header>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Temperature</h4>
+                        </div>
+
+                        <div class="card-body">
+
+                            <h1 id="temp" class="card-title pricing-card-title">
+                                °C
+                            </h1>
+
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Condition: <span id="condition"></span></li>
+                                <li>High: <span id="high"></span></li>
+                                <li>Low: <span id="low"></span></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Humidity</h4>
+                        </div>
+
+                        <div class="card-body">
+
+                            <h1 id="humidity" class="card-title pricing-card-title">
+                                %
+                            </h1>
+
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li id="sunrise"></li>
+                                <li id="sunset"></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Wind</h4>
+                        </div>
+
+                        <div class="card-body">
+
+                            <h1 id="wind" class="card-title pricing-card-title">
+                                km/h
+                            </h1>
+
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li id="windDirection"></li>
+                                <li id="windChill"></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>Condition</th>
+                            <th>Temperature</th>
+                            <th>Humidity</th>
+                            <th>High</th>
+                            <th>Low</th>
+                            <th>Sunrise</th>
+                            <th>Sunset</th>
+                            <th>Wind Direction</th>
+                            <th>Wind Speed</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Tokyo</th>
+
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Boston</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Seoul</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Rio</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Moscow</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Berlin</th>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+    </div>
+
+    <section id="about" class="container my-5 text-center">
+
+        <h2>About This App</h2>
+
+        <p>
+            SkyCast is a modern weather platform that delivers real-time weather
+            updates for cities around the world.
+        </p>
+
+        <p>
+            Users can quickly check temperature, humidity, and wind conditions
+            through a clean and interactive interface.
+        </p>
+
+        <p>
+            Built using HTML, CSS, Bootstrap, and JavaScript with live weather
+            integration powered by the Open-Meteo API.
+        </p>
+
+    </section>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+
+
+        </div>
+    </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
