@@ -20,6 +20,9 @@ SkyCast is a modern and responsive weather application that provides real-time w
 - JavaScript
 - Open-Meteo API
 
+## Live Demo
+🔗 https://romamishra30.github.io/skycast-weather-app/
+
 ## 📸 Preview
 
 SkyCast provides a clean dashboard with weather cards, city search, and additional weather details.
