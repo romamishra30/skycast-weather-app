@@ -31,9 +31,7 @@ SkyCast provides a clean dashboard with weather cards, city search, and addition
 
 Open-Meteo Weather API
 
-Example:
-
-https://api.open-meteo.com/
+🔗 https://open-meteo.com/
 
 ## 📂 Project Structure
 
