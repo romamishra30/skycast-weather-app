@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Weather App</title>
+    <title>SkyCast</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -58,14 +58,14 @@
         <header>
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 id="cityName" class="display-4 fw-normal text-body-emphasis">
-                    🌤️Weather of City
+                    Weather of City
                 </h1>
             </div>
         </header>
         <main>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                 <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card weather-card card-left mb-4 rounded-3 shadow-sm border-primary">
 
                         <div class="card-header py-3 text-bg-primary border-primary">
                             <h4 class="my-0 fw-normal">Temperature</h4>
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card weather-card card-bottom mb-4 rounded-3 shadow-sm border-primary">
 
                         <div class="card-header py-3 text-bg-primary border-primary">
                             <h4 class="my-0 fw-normal">Humidity</h4>
@@ -101,8 +101,8 @@
                             </h1>
 
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li id="sunrise"></li>
-                                <li id="sunset"></li>
+                                <li>Sunrise: <span id="sunrise"></span></li>
+                                <li>Sunset: <span id="sunset"></span></li>
                             </ul>
 
                         </div>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card weather-card card-right mb-4 rounded-3 shadow-sm border-primary">
 
                         <div class="card-header py-3 text-bg-primary border-primary">
                             <h4 class="my-0 fw-normal">Wind</h4>
@@ -123,8 +123,9 @@
                             </h1>
 
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li id="windDirection"></li>
-                                <li id="windChill"></li>
+                                <li>Direction: <span id="direction"></span></li>
+                                <li>Wind Type: <span id="windLevel"></span></li>
+                                <li>Speed Type: <span id="windType"></span></li>
                             </ul>
 
                         </div>
@@ -132,103 +133,38 @@
                     </div>
                 </div>
             </div>
-            <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
-            <div class="table-responsive">
-                <table class="table text-center">
-                    <thead>
-                        <tr>
-                            <th>City</th>
-                            <th>Condition</th>
-                            <th>Temperature</th>
-                            <th>Humidity</th>
-                            <th>High</th>
-                            <th>Low</th>
-                            <th>Sunrise</th>
-                            <th>Sunset</th>
-                            <th>Wind Direction</th>
-                            <th>Wind Speed</th>
-                        </tr>
-                    </thead>
+            <h2 class="display-6 text-center mb-4">Popular Cities</h2>
+            <section id="popularCities" class="container my-5">
 
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="text-start">Tokyo</th>
+                <div class="row g-4">
 
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Boston</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="text-start">Seoul</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Rio</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Moscow</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Berlin</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <div class="col-md-4">
+                        <div class="popular-card text-center p-4">
+                            <h3>Mumbai</h3>
+                            <h1 id="mumbaiTemp"></h1>
+                            <p id="mumbaiCondition">Loading...</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="popular-card text-center p-4">
+                            <h3>Tokyo</h3>
+                            <h1 id="tokyoTemp"></h1>
+                            <p id="tokyoCondition">Loading...</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="popular-card text-center p-4">
+                            <h3>London</h3>
+                            <h1 id="londonTemp"></h1>
+                            <p id="londonCondition">Loading...</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
         </main>
 
     </div>
@@ -252,6 +188,27 @@
             integration powered by the Open-Meteo API.
         </p>
 
+    </section>
+
+    <section id="guide" class="container my-5 text-center">
+        <h2>Usage Guide</h2>
+
+        <div class="guide-steps">
+            <div class="guide-box">
+                <h4>1. Enter City</h4>
+                <p>Type the name of any city in the search box.</p>
+            </div>
+
+            <div class="guide-box">
+                <h4>2. Click Search</h4>
+                <p>The app fetches live weather data using the Open-Meteo API.</p>
+            </div>
+
+            <div class="guide-box">
+                <h4>3. View Weather</h4>
+                <p>Check temperature, humidity, wind speed, sunrise, and sunset.</p>
+            </div>
+        </div>
     </section>
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">

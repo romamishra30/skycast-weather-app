@@ -1,14 +1,19 @@
 body {
     background: #f4f7fb;
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+#guide {
+    border: none !important;
 }
 
 .card {
-    transition: 0.3s;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 14px 35px rgba(13,110,253,0.15);
 }
 
 .card-title {
@@ -130,4 +135,187 @@ ul li {
 
 html {
     scroll-behavior: smooth;
+}
+
+.card {
+    height: 90%;
+}
+
+.card-body {
+    min-height: 200px;
+}
+
+.weather-card {
+    opacity: 0;
+    animation-duration: 0.9s;
+    animation-fill-mode: forwards;
+}
+
+.card-left {
+    animation-name: slideFromLeft;
+}
+
+.card-bottom {
+    animation-name: slideFromBottom;
+    animation-delay: 0.2s;
+}
+
+.card-right {
+    animation-name: slideFromRight;
+    animation-delay: 0.4s;
+}
+
+
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#guide {
+    padding-bottom: 140px;
+    border: none !important;
+
+}
+
+#guide h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 40px;
+}
+
+.guide-steps {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.guide-box {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    width: 30%;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    opacity: 0;
+}
+
+
+.animate-guide .guide-box:nth-child(1) {
+    animation: guideLeft 0.9s forwards;
+}
+
+.animate-guide .guide-box:nth-child(2) {
+    animation: guideBottom 0.9s forwards;
+    animation-delay: 0.2s;
+}
+
+.animate-guide .guide-box:nth-child(3) {
+    animation: guideRight 0.9s forwards;
+    animation-delay: 0.4s;
+}
+
+.guide-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 14px 35px rgba(13,110,253,0.15);
+}
+
+@keyframes guideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes guideRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes guideBottom {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.guide-box h4 {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.guide-box p {
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .guide-steps {
+        flex-direction: column;
+    }
+
+    .guide-box {
+        width: 100%;
+    }
+}
+
+.popular-card {
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.35s ease;
+}
+
+.popular-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 35px rgba(13,110,253,0.15);
+    transition: 0.35s ease;
+
+}
+
+.popular-card h1 {
+    color: #0d6efd;
+    font-weight: bold;
 }
